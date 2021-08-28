@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include<string.h>
+
+void reverse_string(char arr[])
+{
+	char tmp = arr[0];
+	int len = strlen(arr);
+	arr[0] = arr[len - 1];
+	arr[len - 1] = '\0';
+	if (strlen(arr + 1) >= 2)
+	{
+		reverse_string(arr + 1);
+	}
+	arr[len - 1] = tmp;
+	
+}
+int main()
+{
+	char arr[] = "abcdef";//fedcba
+	reverse_string(arr);
+	printf("%s\n", arr);
+	return 0;
+}
