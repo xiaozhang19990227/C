@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+
+//代码1
+void test1()
+{
+	int n = 10;
+	int m = 20;
+	int *p = &n;
+	*p = 20;//ok?
+	p = &m; //ok?
+}
+void test2()
+{
+	//代码2
+	int n = 10;
+	int m = 20;
+	const int* p = &n;
+	*p = 20;//ok? 不行
+	p = &m; //ok?
+}
+void test3()
+{
+	int n = 10;
+	int m = 20;
+	int *const p = &n;
+	*p = 20; //ok?
+	p = &m; //ok? 不行
+}
+int main()
+{
+	//测试无cosnt的
+	test1();
+	//测试const放在*的左边
+	test2();
+	//测试const放在*的右边
+	test3();
+	return 0;
+}
