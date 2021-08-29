@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+
+int my_strlen(const  char *str)
+{
+	int count = 0;
+	assert(str != NULL);
+	while (*str)//判断字符串是否结束
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+int main()
+{
+	const char* p = "abcdef";
+	//测试
+	int len = my_strlen(p);
+	printf("len = %d\n", len);
+	return 0;
+}
