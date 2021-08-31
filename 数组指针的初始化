@@ -1,0 +1,10 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+
+int main()
+{
+	char* arr[5];
+	char* (*pa)[5] = &arr;
+	return 0;
+}
